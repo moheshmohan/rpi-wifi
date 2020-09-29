@@ -15,7 +15,7 @@ Configures simultaneous AP and Managed Mode Wifi on Raspberry Pi
 
 USAGE:
     rpi-wifi -a <ap_ssid> [<ap_password>] -c <client_password> [<client_password>]
-    
+
     rpi-wifi -a MyAP myappass -c MyWifiSSID mywifipass
 
 PARAMETERS:
@@ -160,6 +160,7 @@ EOF
 
 # Populate `/bin/start_wifi.sh`
 sudo bash -c 'cat > /bin/rpi-wifi.sh' << EOF
+#!/bin/bash
 echo 'Starting Wifi AP and client...'
 sleep 30
 sudo ifdown --force wlan0
